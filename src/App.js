@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";
@@ -10,12 +11,16 @@ import Default from "./pages/Default";
 class App extends Component {
   render() {
     return (
-      <div>
-        <Home />
-        <Recipes />
-        <SingleRecipe />
-        <Default />
-      </div>
+      <Router>
+        <main>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/recipes" exact component={Recipes} />
+            <Route path="/recipes/:id" component={SingleRecipe} />
+            <Route component={Default} />
+          </Switch>
+        </main>
+      </Router>
     );
   }
 }
