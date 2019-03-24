@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { recipeData } from "../data/tempDetails";
 import { Link } from "react-router-dom";
 
 export default class SingleRecipe extends Component {
@@ -76,7 +75,7 @@ export default class SingleRecipe extends Component {
             <a
               href={publisher_url}
               target="_blank"
-              rel="noopener noreferer"
+              rel="noopener noreferrer"
               className="btn btn-primary mt-2 text-capitalize"
             >
               publisher webpage
@@ -84,7 +83,7 @@ export default class SingleRecipe extends Component {
             <a
               href={source_url}
               target="_blank"
-              rel="noopener noreferer"
+              rel="noopener noreferrer"
               className="btn btn-success mt-2 mx-2 text-capitalize"
             >
               recipe url
