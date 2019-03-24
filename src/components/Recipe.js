@@ -19,6 +19,28 @@ export default class Recipe extends Component {
             className="img-card-top"
             alt="recipe"
           />
+          <div className="card-body text-capitalize">
+            <h6>{title}</h6>
+            <h6 className="text-warning text-slanted">
+              provided by {publisher}
+            </h6>
+          </div>
+          <div className="card-footer">
+            <Link
+              to={`/recipes/${recipe_id}`}
+              className="btn btn-primary text-capitalize"
+            >
+              Details
+            </Link>
+            <a
+              href={source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-success mx-2 text-capitalize"
+            >
+              recipe url
+            </a>
+          </div>
         </div>
       </div>
     );
