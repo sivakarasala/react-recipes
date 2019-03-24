@@ -51,7 +51,38 @@ export default class SingleRecipe extends Component {
               alt="recipe"
             />
           </div>
-          <div className="col-10 mx-auto col-md-6 my-3" />
+          <div className="col-10 mx-auto col-md-6 my-3">
+            <h6 className="text-uppercase">{title}</h6>
+            <h6 className="text-warning text-capitalize text-slanted">
+              provided by {publisher}
+            </h6>
+            <a
+              href={publisher_url}
+              target="_blank"
+              rel="noopener noreferer"
+              className="btn btn-primary mt-2 text-capitalize"
+            >
+              publisher webpage
+            </a>
+            <a
+              href={source_url}
+              target="_blank"
+              rel="noopener noreferer"
+              className="btn btn-success mt-2 mx-2 text-capitalize"
+            >
+              recipe url
+            </a>
+            <ul className="list-group mt-4">
+              <h2 className="mt-3 mb-4">Ingredients</h2>
+              {ingredients.map((item, index) => {
+                return (
+                  <li key={index} className="list-group-item text-slanted">
+                    {item}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );
