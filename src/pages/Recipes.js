@@ -66,7 +66,19 @@ export default class Recipes extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <RecipeList recipes={this.state.recipes} />
+        {this.state.error ? (
+          <section>
+            <div className="row">
+              <div className="col">
+                <h2 className="text-orange text-center text-uppercase mt-5">
+                  {this.state.error}
+                </h2>
+              </div>
+            </div>
+          </section>
+        ) : (
+          <RecipeList recipes={this.state.recipes} />
+        )}
       </>
     );
   }
